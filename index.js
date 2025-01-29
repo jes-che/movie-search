@@ -1,9 +1,6 @@
 'use strict';
 
-const fetchData = 
-
-createAutoComplete({
-    root: document.querySelector('.autocomplete'),
+const autoCompleteConfig = {
     renderOption(movie) {
         const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster;
         return `
@@ -12,7 +9,8 @@ createAutoComplete({
         `;
     },
     onOptionSelect(movie) {
-        onMovieSelect(movie);
+        document.querySelector('.movie-icon').classList.add('is-hidden');
+        onMovieSelect(movie, document.querySelector('#summary'));
     },
     inputValue(movie) {
         return movie.Title;
@@ -31,17 +29,22 @@ createAutoComplete({
     
         return response.data.Search;
     }
+};
+
+createAutoComplete({
+    ...autoCompleteConfig,
+    root: document.querySelector('.autocomplete')
 });
 
-const onMovieSelect = async movie => {
+const onMovieSelect = async (movie, summaryElement) => {
     const response = await axios.get('https://www.omdbapi.com/', {
         params: {
             apikey: '324c8bee',
             i: movie.imdbID
         }
     });
-    document.querySelector('.movie-icon').classList.add('hidden');
-    document.querySelector('#summary').innerHTML = movieTemplate(response.data);
+    // document.querySelector('.movie-icon').classList.add('is-hidden');
+    summaryElement.innerHTML = movieTemplate(response.data);
     console.log(response.data);
 };
 

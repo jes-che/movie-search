@@ -78,7 +78,3 @@ input:focus::placeholder {
     margin-top: 15rem;
     font-size: 10rem;
 }
-
-.hidden {
-    display: none;
-}
