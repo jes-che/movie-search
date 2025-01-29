@@ -1,4 +1,4 @@
-const createAutoComplete = ({root}) => {
+const createAutoComplete = ({root, renderOption, onOptionSelect, inputValue}) => {
     root.innerHTML = `
         <input class="input has-text-black has-background-light is-size-2" type="text" size="30" placeholder="Search for movies...">
         <div class="dropdown">
@@ -24,24 +24,20 @@ const createAutoComplete = ({root}) => {
         dropdown.classList.add('is-active');
         for (let movie of movies) {
             const option = document.createElement('a');
-            const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster;
 
             option.classList.add('dropdown-item', 'has-text-black', 'has-background-light', 'is-size-4');
-            option.innerHTML = `
-                <img src="${imgSrc}" />
-                ${movie.Title} (${movie.Year})
-            `;
+            option.innerHTML = renderOption(movie);
             option.addEventListener('click', () => {
                 dropdown.classList.remove('is-active');
-                input.value = movie.Title;
-                onMovieSelect(movie);
+                input.value = inputValue(movie);
+                onOptionSelect(movie);
             })
 
             resultsWrapper.appendChild(option);
         }
     };
 
-    input.addEventListener('click', debounce(onInput, 3000));
+    input.addEventListener('click', debounce(onInput, 2000));
             
     document.addEventListener('click', event => {
         if (!root.contains(event.target)) {
