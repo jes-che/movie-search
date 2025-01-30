@@ -1,6 +1,6 @@
 :root {
     /* TEXT VARIABLES */
-    /* --font:; */
+    --font: "Luckiest Guy", serif;
     --text-light: #80c423;
 
     /* COLOR VARIABLES */
@@ -31,14 +31,24 @@ body {
 
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+    font-size: 5rem;
+    font-family: var(--font);
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 5rem;
 }
 
 input {
-    margin-top: 10rem;
+    margin-top: 3.5rem;
     /* font-size: 5rem; */
     /* border-radius: 5px; */
 }
@@ -75,6 +85,6 @@ input:focus::placeholder {
 }
 
 .movie-icon {
-    margin-top: 15rem;
+    margin-top: 12.5rem;
     font-size: 10rem;
 }
