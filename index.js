@@ -43,7 +43,6 @@ const onMovieSelect = async (movie, summaryElement) => {
             i: movie.imdbID
         }
     });
-    // document.querySelector('.movie-icon').classList.add('is-hidden');
     summaryElement.innerHTML = movieTemplate(response.data);
     console.log(response.data);
 };
