@@ -21,12 +21,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     height: 100vh;
-    /* background-color: #421869; */
-    /* background-color: #310e68;
-    background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%); */
     background-color: var(--bg-light);
     background-image: var(--bg-gradient);
-    /* overflow-y: scroll; */
     overflow: auto;
 
 }
@@ -49,8 +45,6 @@ header {
 
 input {
     margin-top: 2.5rem;
-    /* font-size: 5rem; */
-    /* border-radius: 5px; */
 }
 
 input::placeholder {
@@ -66,7 +60,7 @@ input:focus::placeholder {
 }
 
 .dropdown-content {
-    width: 120%; /*To be adjusted?*/
+    width: 120%;
 }
 
 .dropdown-item {
@@ -103,6 +97,10 @@ input:focus::placeholder {
     
     .image {
         width: 90%;
+    }
+
+    .media-left {
+        margin-inline-end: 0;
     }
 
     .media-content {
