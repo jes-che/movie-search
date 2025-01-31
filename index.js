@@ -52,7 +52,7 @@ const movieTemplate = movieDetail => {
     return `
         <article class="media">
             <figure class="media-left">
-                <p class="image mr-5">
+                <p class="image">
                     <img src="${movieDetail.Poster}" />
                 </p>
             </figure>

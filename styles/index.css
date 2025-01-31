@@ -48,7 +48,7 @@ header {
 }
 
 input {
-    margin-top: 3.5rem;
+    margin-top: 2.5rem;
     /* font-size: 5rem; */
     /* border-radius: 5px; */
 }
@@ -82,9 +82,54 @@ input:focus::placeholder {
 .media {
     width: 80%;
     margin: auto;
+    margin-top: 3rem;
+}
+
+.image {
+    margin-right: 1.5rem;
 }
 
 .movie-icon {
     margin-top: 12.5rem;
     font-size: 10rem;
+}
+
+/* RESPONSIVE */
+/* TABLET SIZE (768px) */
+@media only screen and (max-width: 48em) {
+    .media {
+        width: 90%;
+    }
+    
+    .image {
+        width: 90%;
+    }
+
+    .media-content {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* MOBILE SIZE (600px) */
+@media only screen and (max-width: 37.5em) {
+    header {
+        margin-top: 5rem;
+    }
+
+    .media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    .media-left {
+        margin: 1rem 1rem 1rem 4rem;
+    }
+
+    .media-content .content h1,
+    .media-content .content h4,
+    .media-content .content h5 {
+        text-align: center;
+    }
 }
