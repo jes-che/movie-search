@@ -16,7 +16,10 @@ const createAutoComplete = ({root, renderOption, onOptionSelect, inputValue, fet
         const items = await fetchData(event.target.value);
 
         if (!items.length) {
-            dropdown.classList.remove('is-active');
+            // dropdown.classList.remove('is-active');
+            dropdown.classList.add('is-active');
+            resultsWrapper.classList.add('has-text-black', 'has-background-light', 'is-size-4');
+            resultsWrapper.innerHTML = 'No results';
             return;
         }
 
